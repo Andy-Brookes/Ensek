@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\00001_create_Account_table.sql" />
+    <None Remove="Scripts\00002_create_MeterReading_table.sql" />
+    <None Remove="Scripts\00003_seed_Account_table.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\00001_create_Account_table.sql" />
+    <EmbeddedResource Include="Scripts\00002_create_MeterReading_table.sql" />
+    <EmbeddedResource Include="Scripts\00003_seed_Account_table.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-sqlserver" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
