@@ -21,10 +21,10 @@ namespace Ensek.Test.Application.Tests.Models
         {
             var meterReading = new Fixture().Create<MeterReading>();
 
-            var invalidResponse = ValidateReadingResponse.CreateValidResponse(meterReading);
+            var validResponse = ValidateReadingResponse.CreateValidResponse(meterReading);
 
-            invalidResponse.IsValid.ShouldBeTrue();
-            invalidResponse.MeterReading.ShouldBe(meterReading);
+            validResponse.IsValid.ShouldBeTrue();
+            validResponse.MeterReading.ShouldBe(meterReading);
         }
     }
 }
